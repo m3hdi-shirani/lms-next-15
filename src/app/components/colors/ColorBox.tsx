@@ -24,18 +24,24 @@ const Color = () => {
     "gradient-second": "bg-gradient-second",
   };
   return (
-    <div className="flex flex-wrap justify-center p-4" dir="ltr" lang="en">
-      {Object.entries(colors).map(([name, color]) => (
-        <div
-          key={name}
-          className={`${color} w-96 h-60 flex flex-col items-center justify-center text-center uppercase m-2 rounded-xl shadow`}
-        >
-          <span className="font-semibold text-lg bg-white p-2 rounded-lg">
-            {name}
-          </span>
-        </div>
-      ))}
-    </div>
+    <>
+      <h1 lang="en" className="w-full text-center font-bold text-4xl">
+        دوره معماری ری اکت
+      </h1>
+
+      <div className="flex flex-wrap justify-center p-4" dir="ltr" lang="en">
+        {Object.entries(colors).map(([name, color]) => (
+          <div
+            key={name}
+            className={`${color} w-96 h-60 flex flex-col items-center justify-center text-center uppercase m-2 rounded-xl shadow`}
+          >
+            <span className="font-semibold text-lg bg-white p-2 rounded-lg">
+              {name}
+            </span>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

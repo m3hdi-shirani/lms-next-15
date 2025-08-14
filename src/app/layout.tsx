@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
-
+import { Header } from "./components/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -59,6 +59,7 @@ export default function RootLayout({
       className={`dark ${figtree.variable} ${iranyekan.variable}`}
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
+        <Header />
         <main>{children}</main>
       </body>
     </html>

@@ -88,7 +88,7 @@
 
 @layer base {
   body {
-    font-family: var(--font-yekanbakh);
+    font-family: var(--font-iranyekan);
   }
 
   :lang(en) {
