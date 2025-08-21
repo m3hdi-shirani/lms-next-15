@@ -47,7 +47,7 @@ const CourseCard = ({
 
       <Link
         className="card-footer animated-icon justify-center"
-        href={`/course/${slug}`}
+        href={`/courses/${slug}`}
       >
         مشاهده جزئیات دوره
         <IconArrowLeftFill fill="currentColor" />
