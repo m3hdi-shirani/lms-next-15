@@ -8,6 +8,7 @@ import { Button } from "./_components/button";
 import { Feature } from "./_components/feature";
 import HomeHeroSection from "./_components/home-hero-section/HomeHeroSection";
 import { IconArrowLeftFill } from "./_components/icons/icons";
+import { CardPlaceholder } from "./_components/placeholders/card";
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
   const res = await fetch(`${API_URL}/blog/newest/${count}`, {
@@ -39,7 +40,7 @@ export default async function Home() {
             برای به‌روز موندن، یاد گرفتن نکته‌های تازه ضروری‌ه!
           </p>
         </div>
-        <Suspense fallback={<div>در حال دریافت اطلاعات...</div>}>
+        <Suspense fallback={<CardPlaceholder count={4} className="mt-5" />}>
           <CourseCardList courses={[]} />
         </Suspense>
       </section>
