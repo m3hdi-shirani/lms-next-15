@@ -1,4 +1,5 @@
 import { Badge } from "@/app/_components/badge";
+import { IconArrowLeftFill, IconClock } from "@/app/_components/icons/icons";
 import { CourseSummary } from "@/types/course-summery.interface";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +35,10 @@ const CourseCard = ({
         </Link>
         <p>{subTitle}</p>
         <div className="flex items-center justify-between">
-          <Badge variant="warning">{duration}</Badge>
+          <Badge variant="warning">
+            <IconClock width={16} height={16} />
+            {duration}
+          </Badge>
 
           {basePrice}
         </div>
@@ -45,6 +49,7 @@ const CourseCard = ({
         href={`/course/${slug}`}
       >
         مشاهده جزئیات دوره
+        <IconArrowLeftFill fill="currentColor" />
       </Link>
     </div>
   );
