@@ -1,7 +1,7 @@
 import { API_URL } from "@/config/global";
 import { homeFeatures } from "@/data/home-features";
 import { BlogPostSummary } from "@/types/blog-post-summery.interface";
-import { CourseSummary } from "@/types/course-summery.interface";
+import { Suspense } from "react";
 import BlogPostCardList from "./(blog)/_components/BlogPostCardList";
 import CourseCardList from "./(courses)/_components/CourseCardList";
 import { Button } from "./_components/button";
@@ -9,26 +9,17 @@ import { Feature } from "./_components/feature";
 import HomeHeroSection from "./_components/home-hero-section/HomeHeroSection";
 import { IconArrowLeftFill } from "./_components/icons/icons";
 
-async function getNewestCourses(count: number): Promise<CourseSummary[]> {
-  const res = await fetch(`${API_URL}/courses/newest/${count}`, {
+async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
+  const res = await fetch(`${API_URL}/blog/newest/${count}`, {
     next: { revalidate: 24 * 60 * 60 },
   });
   return res.json();
 }
 
-async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
-  const res = await fetch(`${API_URL}/blog/newest/${count}`);
-  return res.json();
-}
-
 export default async function Home() {
-  const newestCoursesData = getNewestCourses(4);
   const newestBlogPostsData = getNewestPosts(4);
   // Wait for the promises to resolve
-  const [newestCourses, newestBlogPosts] = await Promise.all([
-    newestCoursesData,
-    newestBlogPostsData,
-  ]);
+  const [newestBlogPosts] = await Promise.all([newestBlogPostsData]);
 
   return (
     <>
@@ -48,7 +39,9 @@ export default async function Home() {
             برای به‌روز موندن، یاد گرفتن نکته‌های تازه ضروری‌ه!
           </p>
         </div>
-        <CourseCardList courses={newestCourses} />
+        <Suspense fallback={<div>در حال دریافت اطلاعات...</div>}>
+          <CourseCardList courses={[]} />
+        </Suspense>
       </section>
 
       <section className="px-2 my-40">
