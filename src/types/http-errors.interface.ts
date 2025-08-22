@@ -17,11 +17,11 @@ interface NotFoundError extends ProblemDetails {}
 
 interface UnhandledError extends ProblemDetails {}
 
-interface networkError extends ProblemDetails {}
+interface NetworkError extends ProblemDetails {}
 
 export type {
   BadRequestError,
-  networkError,
+  NetworkError,
   NotFoundError,
   ProblemDetails,
   UnauthorizedError,
