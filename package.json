@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.11.0",
     "classnames": "^2.5.1",
     "next": "15.4.6",
     "postcss-nested": "^7.0.2",
@@ -21,13 +22,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "gulp": "^4.0.2",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.6",
+    "gulp": "^5.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-replace": "^1.1.4",
     "gulp-svgmin": "^4.1.0",
     "gulp-wrap": "^0.15.0",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.6",
     "tailwindcss": "^4.1.0",
     "typescript": "^5"
   }

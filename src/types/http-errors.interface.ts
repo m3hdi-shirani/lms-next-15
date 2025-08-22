@@ -2,7 +2,7 @@
 
 interface ProblemDetails {
   title: string;
-  statusCode: number;
+  status: number;
   detail?: string;
   errors?: Record<string, string[]>;
 }
