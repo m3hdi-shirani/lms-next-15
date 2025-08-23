@@ -19,7 +19,16 @@ interface UnhandledError extends ProblemDetails {}
 
 interface NetworkError extends ProblemDetails {}
 
+type ApiError =
+  | BadRequestError
+  | NetworkError
+  | NotFoundError
+  | UnhandledError
+  | UnauthorizedError
+  | ValidationError;
+
 export type {
+  ApiError,
   BadRequestError,
   NetworkError,
   NotFoundError,
