@@ -9,7 +9,7 @@ import { Button } from "./_components/button";
 import { Feature } from "./_components/feature";
 import HomeHeroSection from "./_components/home-hero-section/HomeHeroSection";
 import { IconArrowLeftFill } from "./_components/icons/icons";
-import { CardPlaceholder } from "./_components/placeholders/card";
+import { CardPlaceholder } from "./_components/placeholders";
 import { TestimonialList } from "./_components/testimonial";
 
 async function getNewestPosts(count: number): Promise<BlogPostSummary[]> {
