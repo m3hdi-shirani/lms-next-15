@@ -1,9 +1,10 @@
+import ReactQueryProvider from "@/providers/react-query-provider";
 import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
+import { Footer } from "./_components/footer";
 import { Header } from "./_components/header";
 import "./globals.css";
-import { Footer } from "./_components/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -60,9 +61,11 @@ export default function RootLayout({
       className={`dark ${figtree.variable} ${iranyekan.variable}`}
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ReactQueryProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );
