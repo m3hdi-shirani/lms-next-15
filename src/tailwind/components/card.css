@@ -13,6 +13,6 @@
   }
 
   &-footer {
-    @apply p-3 font-bold  flex items-center gap-2 py-4 text-current border-t dark:border-base-content dark:border-black/10;
+    @apply p-3 font-bold flex items-center gap-2 py-4 text-current border-t dark:border-base-content/10;
   }
 }
