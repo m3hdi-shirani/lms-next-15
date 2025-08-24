@@ -5,7 +5,7 @@ export interface CourseSummary {
   title: string;
   courseCategoryId: number;
   duration: string;
-  level: string;
+  level?: string;
   levelNumber: CourseLevel;
   averageReviewRating: number | null;
   numOfReviews: number | null;

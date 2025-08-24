@@ -62,6 +62,7 @@ const CourseAside = ({
             <IconLevel width={22} />
             {level}
           </div>
+          <Progress variant="primary" value={20} />
           <Progress
             size="tiny"
             variant={levelVariant[levelNumber!]}
