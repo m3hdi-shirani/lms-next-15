@@ -51,9 +51,9 @@ const CourseCurriculum = ({ data }: CourseCurriculumProps) => {
                     className="py-5 border-b dark:border-base-content/10 ml-4 border-dashed last-of-type:border-0"
                     key={`lecture${lecture.title}`}
                   >
-                    <span className="absolute flex items-center justify-center w-4 h-4 bg-blue-100 rounded-full -right-2 bg-primary/30"></span>
+                    <span className="absolute flex items-center justify-center w-4 h-4 bg-blue-100 rounded-full -right-2  dark:bg-primary/30"></span>
 
-                    <h3 className="text-base font-semibold text-base-content flex items-center justify-between">
+                    <h3 className="text-base font-semibold text-gray-400 flex items-center justify-between">
                       {lecture.title}
                       <div className="flex items-center gap-2">
                         <Badge variant="info" className="!w-20 mt-1">
